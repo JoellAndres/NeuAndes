@@ -1,0 +1,213 @@
+
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.BarraCompra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espaciado entre elementos */
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+.bottomcarrito {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.bottomcarrito:hover {
+    background-color: #218838;
+}
+
+#cart-summary p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Barra de búsqueda */
+#search-input {
+    width: 70%;
+    max-width: 300px;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-btn {
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Botón de moneda */
+#toggle-price-btn {
+    display: block;
+    margin: 1rem auto;
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggle-price-btn:hover {
+    background-color: #e0a800;
+}
+
+
+.container-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item figure {
+    margin: 0;
+    padding: 0;
+}
+
+.item img {
+    width: 100%;
+    max-width: 150px; 
+    height: auto;
+    border-radius: 5px;
+    margin: 0 auto;  
+}
+
+.info-product {
+    margin-top: 1rem;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: #28a745;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.btn-add-cart {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.btn-add-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) { /* Tablets */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .BarraCompra {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #search-input {
+        width: 80%;
+    }
+
+    #cart-summary p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) { /* Smartphones */
+    #search-input {
+        width: 90%;
+    }
+
+    .container-items {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 1rem;
+    }
+
+    .item {
+        padding: 0.8rem;
+    }
+
+    .btn-add-cart {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .price {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) { /* Celulares pequeños */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #toggle-price-btn, #search-btn {
+        font-size: 0.9rem;
+    }
+
+    .item {
+        padding: 0.6rem;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+   
+}
+

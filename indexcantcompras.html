@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <link rel="stylesheet" href="carross.css">
+   <link rel="stylesheet" href="estilopaginaprincipal.css">
+   <link rel="stylesheet" href="elementoscompras.css">
+   
+   
+    <title>Tienda</title>
+</head>
+<body>
+
+     <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <a href="http://localhost/Paginaweb/Usuario/logout.php" class="logo">Cerrar sesión</a>
+            </div>
+            <button class="hamburger" id="hamburger">☰</button>
+            <div class="navbar-links" id="navbar-links">
+                <a href="indexcantcompras.html">Productos</a>
+                <a href="Contactos.html">Contacto</a>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="BarraCompra">			
+        <div id="wallet_container"></div>
+        <button class="bottomcarrito" id="bottoncompra">Pagar</button>
+        
+    </div>
+
+    <input type="text" id="search-input" placeholder="Buscar productos..." />
+
+    <button id="toggle-price-btn">Mostrar en USD</button> 
+    <button id="toggle-cart">🛒 Carro (<span id="cart-count">0</span>)</button>
+    <div class="container-items">
+        <div class="item" data-price="1000" data-title="Arquero">
+            <figure>
+                <img src="http://localhost/Paginaweb/Imagenes/Rueda 1.png" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2 class="name">Rueda 1</h2>
+                <p class="price">$1000</p>
+                <p class="price-usd" style="display: none;">USD $0.00</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item" data-price="2000" data-title="Bestia">
+            <figure>
+                <img src="http://localhost/Paginaweb/Imagenes/Rueda 2.jpg" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2 class="name">Rueda 2</h2>
+                <p class="price">$2000</p>
+                <p class="price-usd" style="display: none;">USD $0.00</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item" data-price="1750" data-title="Guardian">
+            <figure>
+                <img src="http://localhost/Paginaweb/Imagenes/Rueda 3.png" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2 class="name">Rueda 3</h2>
+                <p class="price">$1750</p>
+                <p class="price-usd" style="display: none;">USD $0.00</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item" data-price="1250" data-title="Mago">
+            <figure>
+                <img src="http://localhost/Paginaweb/Imagenes/Rueda 4.png" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2 class="name">Rueda 4</h2>
+                <p class="price">$1250</p>
+                <p class="price-usd" style="display: none;">USD $0.00</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item" data-price="1500" data-title="Picaro">
+            <figure>
+                <img src="http://localhost/Paginaweb/Imagenes/Rueda 5.png" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2 class="name">Rueda 5</h2>
+                <p class="price">$1500</p>
+                <p class="price-usd" style="display: none;">USD $0.00</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item" data-price="1500" data-title="Sacerdote">
+            <figure>
+                <img src="http://localhost/Paginaweb/Imagenes/Rueda 6.png" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2 class="name">Rueda 6</h2>
+                <p class="price">$1750</p>
+                <p class="price-usd" style="display: none;">USD $0.00</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+/*
+    
+
+        let cart = [];
+        const totalAmountEl = document.querySelector('.total-pagar');
+        const totalItemsEl = document.getElementById('total-items');
+
+
+// Agregar productos al carrito
+document.querySelectorAll('.btn-add-cart').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const itemElement = event.target.closest('.item');
+        const price = parseFloat(itemElement.getAttribute('data-price'));
+        const title = itemElement.getAttribute('data-title');
+
+        const product = { title, price, quantity: 1 };
+        const existingProduct = cart.find(item => item.title === title);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            cart.push(product);
+        }
+
+        updateCartSummary();
+        renderCartItems();
+    });
+});
+
+// Actualiza el resumen del carrito
+function updateCartSummary() {
+    const totalAmount = cart.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+    const totalItems = cart.reduce((acc, product) => acc + product.quantity, 0);
+
+    totalAmountEl.innerText = totalAmount.toFixed(2);
+    totalItemsEl.innerText = totalItems;
+}
+    */    
+
+    const walletContainer = document.getElementById('wallet_container');
+    const bottonCompra = document.getElementById('bottoncompra');
+        // Enviar los datos al backend para crear la preferencia de pago
+        bottonCompra.addEventListener('click', async () => {
+            // Crear preferencia
+            if (cart.length === 0) {
+            alert('El carrito está vacío. Por favor, añade productos antes de pagar.');
+            return;
+        }
+            const productsForPayment = cart.map(product => ({
+                title: product.title,
+                quantity: product.quantity,
+                unit_price: product.price,
+            }));
+
+            const response = await fetch('http://localhost:3000/create_preference', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items: productsForPayment }),
+            });
+
+            const data = await response.json();
+
+            if (data.id) {
+                const mp = new MercadoPago('APP_USR-dc316edf-6ae6-4ada-8e4d-46faf9e18e5b', { locale: 'es_AR' });
+
+                // Renderizar el botón de MercadoPago
+                mp.checkout({
+                    preference: { id: data.id },
+                    render: {
+                        container: '#wallet_container',
+                        label: 'Pagar con MercadoPago',
+                    },
+                });
+
+                // Eliminar el botón después de cerrar el modal
+                addCloseListener();
+            } else {
+                alert('Error al generar la preferencia de pago.');
+            }
+        });
+
+        // Función para escuchar el cierre del modal
+        function addCloseListener() {
+            const interval = setInterval(() => {
+                const modal = document.querySelector('.mercadopago-modal-wrapper');
+                if (!modal) {
+                    clearInterval(interval); // Detener el intervalo
+                    console.log('El modal se cerró.');
+                    walletContainer.innerHTML = ''; // Eliminar el botón de pago
+                }
+            }, 4000); // Comprobar cada 500ms
+        }
+
+       
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="compras.js"></script>
+    <script src="3d.js"></script>
+    <script src="busquedasa.js"></script>
+    <script src="scriptpaginaprincipal.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('Imagenes/b.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+header {
+    text-align: center;
+    background-color: #0078D7;
+    color: white;
+    padding: 1rem 0;
+}
+
+h1, h2 {
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+}
+
+main {
+    padding: 1rem;
+}
+
+/* Sección de Google Maps */
+.ubicacion .mapa {
+    margin: 1rem 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Información de contacto */
+.info-contacto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-contacto ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.info-contacto ul li a {
+    color: #0078D7;
+    text-decoration: none;
+}
+
+.info-contacto ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Foto y descripción */
+.mi-foto {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.foto-con-descripcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-con-descripcion img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #0078D7;
+}
+
+.foto-con-descripcion p {
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #0078D7;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* --- Responsiveness --- */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .info-contacto ul li {
+        font-size: 0.9rem;
+    }
+
+    .foto-con-descripcion img {
+        max-width: 120px;
+    }
+
+    .foto-con-descripcion p {
+        padding: 0 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    header {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+
+    .info-contacto ul li {
+        font-size: 0.8rem;
+    }
+
+    .foto-con-descripcion img {
+        max-width: 100px;
+    }
+
+    .foto-con-descripcion p {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}

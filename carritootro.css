@@ -1,0 +1,80 @@
+/* Estilo general para los botones */
+#toggle-cart,
+#bottoncompra {
+    background-color: #67a2e1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#toggle-cart:hover,
+#bottoncompra:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#toggle-cart:active,
+#bottoncompra:active {
+    background-color: #003f8a;
+    transform: scale(1);
+}
+
+/* Posicionamiento del botón #toggle-cart */
+#toggle-cart {
+    position: fixed;
+    top: 70px;
+    right: 250px;
+}
+
+.BarraCompra {
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+    align-items: center; /* Alinea verticalmente */
+    gap: 10px; /* Espaciado uniforme entre botones */
+    padding: 10px 20px; /* Ajusta según sea necesario */
+    margin: 0; /* Sin espacio extra externo */
+    background-color: #ffffff; /* Opcional: color de fondo */
+    border: 1px solid #ddd; /* Opcional: bordes para visualización */
+}
+
+/* Responsividad para pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+    #toggle-cart {
+        top: 30px;
+        right: 20px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #bottoncompra {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 10px auto;
+        display: block;
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* Responsividad para pantallas pequeñas (celulares) */
+@media (max-width: 480px) {
+    #toggle-cart {
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #bottoncompra {
+        font-size: 12px;
+        padding: 6px 12px;
+        width: 100%;
+        max-width: none;
+    }
+}

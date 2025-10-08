@@ -1,0 +1,149 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #ff6a95;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: block;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus {
+    border-color: #ff6a95;
+    box-shadow: 0 0 5px rgba(255, 106, 149, 0.4);
+  }
+  
+  span {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 0.3rem;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-submit:hover {
+    background: linear-gradient(to right, #ff6a95, #ff4d6e);
+  }
+  
+  .login-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .login-link a {
+    color: #ff6a95;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    .btn-submit {
+      font-size: 0.9rem;
+    }
+  
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  
